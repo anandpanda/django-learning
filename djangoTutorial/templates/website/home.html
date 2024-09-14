@@ -1,14 +1,9 @@
-{% load static %}
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <h1>Hello, welcome to Django tutorial!</h1>
-</body>
-</html>
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Hello, welcome to Django tutorial!</h1>
+{% endblock %}
