@@ -1,9 +1,31 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} 
 
-{% block title %}
-All Chai
-{% endblock %}
+{% block title %} 
+All Chai 
+{% endblock %} 
 
 {% block content %}
 <h1>All Chai</h1>
+
+<div class="grid grid-cols-3 gap-4 m-4">
+	{% for chai in chais %}
+	<div class="bg-orange-300 p-5 rounded">
+		<img
+			class="rounded p-5"
+			src="{{chai.image.url}}"
+			alt=""
+		/>
+		<h3 class="text-black text-2xl font-bold">{{chai.name}}</h3>
+		<a href="{% url 'chai_detail' chai.id %}">
+			<button
+				type="button"
+				class="bg-blue-400 p-2 font-semibold rounded-xl"
+			>
+				{{chai.chai_type}} - {{chai.id}}
+			</button>
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
 {% endblock %}
